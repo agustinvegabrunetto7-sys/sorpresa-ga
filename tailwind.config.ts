@@ -92,20 +92,12 @@ export default {
         },
         'celeste-wave': {
           '0%, 100%': {
-            'color': 'white',
-            'text-shadow': 'none',
-          },
-          '25%': {
-            'color': 'hsl(190 80% 70%)', /* Un celeste claro */
-            'text-shadow': '0 0 10px hsl(190 80% 70%), 0 0 20px hsl(190 80% 70%)',
+            'color': 'hsl(190 80% 90%)', /* Celeste sutil */
+            'text-shadow': '0 0 5px hsl(190 80% 90%)', /* Brillo sutil */
           },
           '50%': {
-            'color': 'hsl(190 80% 80%)', /* Celeste más brillante */
-            'text-shadow': '0 0 15px hsl(190 80% 80%), 0 0 30px hsl(190 80% 80%)',
-          },
-          '75%': {
-            'color': 'hsl(190 80% 70%)',
-            'text-shadow': '0 0 10px hsl(190 80% 70%), 0 0 20px hsl(190 80% 70%)',
+            'color': 'hsl(190 80% 70%)', /* Celeste más brillante */
+            'text-shadow': '0 0 15px hsl(190 80% 70%), 0 0 30px hsl(190 80% 70%)', /* Brillo más fuerte */
           },
         },
         'light-point-move': {
