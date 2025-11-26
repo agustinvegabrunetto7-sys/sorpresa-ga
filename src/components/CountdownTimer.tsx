@@ -17,7 +17,6 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
       hours: 0,
       minutes: 0,
       seconds: 0,
-      milliseconds: 0, // Añadimos milisegundos
     };
 
     if (difference > 0) {
@@ -26,7 +25,6 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60),
-        milliseconds: Math.floor(difference % 1000), // Calculamos los milisegundos
       };
     }
     return timeLeft;
@@ -38,12 +36,12 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       const newTimeLeft = calculateTimeLeft();
-      if (newTimeLeft.days <= 0 && newTimeLeft.hours <= 0 && newTimeLeft.minutes <= 0 && newTimeLeft.seconds <= 0 && newTimeLeft.milliseconds <= 0) {
+      if (newTimeLeft.days <= 0 && newTimeLeft.hours <= 0 && newTimeLeft.minutes <= 0 && newTimeLeft.seconds <= 0) {
         setIsFinished(true);
         clearInterval(timer);
       }
       setTimeLeft(newTimeLeft);
-    }, 100); // Actualizamos cada 100 milisegundos para ver los milisegundos
+    }, 1000);
 
     return () => clearInterval(timer);
   }, [targetDate]);
@@ -66,7 +64,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 
   return (
     <div className="text-white text-center">
-      <div className="flex justify-center items-baseline space-x-4 md:space-x-8 font-cinzel-decorative">
+      <div className="flex justify-center space-x-4 md:space-x-8 font-cinzel-decorative">
         {/* Días */}
         <div className="relative flex flex-col items-center group p-4 rounded-lg transition-all duration-300 ease-in-out">
           <div className="absolute inset-0 rounded-lg border border-transparent group-hover:border-white/20 group-hover:bg-white/10 transition-all duration-300 ease-in-out"></div>
@@ -98,10 +96,6 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
             <span className="block text-6xl md:text-8xl lg:text-9xl">{formatTime(timeLeft.seconds)}</span>
             <span className="text-lg md:text-xl font-lora mt-2">SEGUNDOS</span>
           </div>
-        </div>
-        {/* Milisegundos */}
-        <div className="text-3xl md:text-4xl lg:text-5xl opacity-70 -ml-2 md:-ml-4">
-          <span className="block">:{String(timeLeft.milliseconds).padStart(3, '0')}</span>
         </div>
       </div>
     </div>
