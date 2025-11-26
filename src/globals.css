@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Inter:wght@400;700&display=swap');
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -49,6 +51,11 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom Fonts */
+    --font-blatismo-sans: 'Bebas Neue', sans-serif;
+    --font-milker: 'Pacifico', cursive;
+    --font-sans-text: 'Inter', sans-serif;
   }
 
   .dark {
