@@ -4,9 +4,9 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import CountdownTimer from "@/components/CountdownTimer";
 
 const Index = () => {
-  // Lunes 1ro de Diciembre a las 7:45 de la mañana (Córdoba, Argentina)
+  // Martes 2 de Diciembre a las 7:45 de la mañana (Córdoba, Argentina)
   // Córdoba (ART) es UTC-3. Así que 7:45 AM ART es 10:45 AM UTC.
-  const targetDate = new Date('2025-12-01T10:45:00Z'); 
+  const targetDate = new Date('2025-12-02T10:45:00Z'); 
 
   return (
     <div className="relative min-h-screen flex flex-col bg-black overflow-hidden">
